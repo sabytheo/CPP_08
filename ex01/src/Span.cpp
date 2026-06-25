@@ -35,7 +35,7 @@ unsigned int	Span::shortestSpan()
 	unsigned int minSpan = std::numeric_limits<int>::max();
 	for (; next != this->_containers.end() ; next++)
 	{
-		long tmp = static_cast<unsigned int>(*next) - static_cast<unsigned int>(*it);
+		long tmp = static_cast<long>(*next) - static_cast<unsigned int>(*it);
 		if (tmp < minSpan)
 			minSpan = tmp;
 		if (minSpan == 0)
@@ -52,8 +52,8 @@ unsigned int	Span::longestSpan()
 		throw Span::NoNumberStoredException ();
 	if (this->_containers.size() == 1)
 		throw Span::OnlyOneNumberStoredException ();
-	int lower = *this->_containers.begin();
-	int higher = *this->_containers.rbegin();
+	long lower = *this->_containers.begin();
+	long higher = *this->_containers.rbegin();
 
 	return static_cast<unsigned int>(higher - lower);
 }
