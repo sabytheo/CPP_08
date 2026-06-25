@@ -32,10 +32,10 @@ unsigned int	Span::shortestSpan()
 		throw Span::OnlyOneNumberStoredException ();
 	std::multiset<int>::iterator it = this->_containers.begin();
 	std::multiset<int>::iterator next = ++(this->_containers.begin());
-	unsigned int minSpan = std::numeric_limits<int>::max();
+	unsigned int minSpan = std::numeric_limits<unsigned int>::max();
 	for (; next != this->_containers.end() ; next++)
 	{
-		long tmp = static_cast<long>(*next) - static_cast<unsigned int>(*it);
+		long tmp = static_cast<long>(*next) - static_cast<long>(*it);
 		if (tmp < minSpan)
 			minSpan = tmp;
 		if (minSpan == 0)
