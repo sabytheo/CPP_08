@@ -16,7 +16,6 @@ Span::Span(const Span &copy) : _size(copy.getSize())
 	*this = copy;
 }
 
-
 void Span::addNumber(int number)
 {
 	if (this->getSize() >= this->_size)
@@ -82,7 +81,8 @@ void Span::addMultipleRamdomNumber(unsigned int n)
 		numbersToAdd.push_back(randomint);
 		// std::cout << randomint << "\n";
 	}
-	this->_containers.insert(numbersToAdd.begin(),numbersToAdd.end());
+	this->addNumbers(numbersToAdd.begin(),numbersToAdd.end());
+	// this->_containers.insert(numbersToAdd.begin(),numbersToAdd.end());
 	std::cout << "These " << n << " numbers are now in the containers." << std::endl ;
 }
 
