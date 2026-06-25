@@ -7,6 +7,7 @@ int main(void)
 
 	srand(time(0));
 	Span sp = Span(5);
+	Span slimit = Span(2);
 
 	sp.addNumber(6);
 	sp.addNumber(686);
@@ -14,8 +15,17 @@ int main(void)
 	sp.addNumber(455);
 	sp.addNumber(172);
 
+	slimit.addNumber(2147483647);
+	slimit.addNumber(-2147483648);
+
+	std::cout << "------------------" << std::endl;
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+	std::cout << "------limit-------" << std::endl;
+
+	std::cout << slimit.shortestSpan() << std::endl;
+	std::cout << slimit.longestSpan() << std::endl;
+	std::cout << "------------------" << std::endl;
 
 	try
 	{
